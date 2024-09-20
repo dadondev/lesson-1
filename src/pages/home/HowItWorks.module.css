@@ -1,0 +1,144 @@
+.howPlan {
+  background: url("../../assets/plan/desktop/bg-steps.png");
+  background-size: cover;
+  padding: 9rem 0 0 3.5rem;
+  border-radius: 0.5rem;
+
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-top: 8rem;
+}
+
+.howPlan .howCard h3,
+.howPlan .howCard p {
+  color: var(--clr-light-cream);
+}
+
+.how {
+  max-width: 1440px;
+
+  width: 80%;
+  margin-top: 8rem;
+  margin-inline: auto;
+}
+
+.how h4 {
+  font-family: var(--ff-fraunces);
+  color: var(--clr-grey);
+  text-align: left;
+  margin-bottom: 5rem;
+}
+
+.cardsContainer {
+  --gap: 5rem;
+  display: flex;
+  gap: var(--gap);
+
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-bottom: var(--gap);
+}
+
+.howPlan .howCard {
+  width: 27%;
+}
+
+.howCard {
+  --decoration-width: 2rem;
+  --decoration-position: -3rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 24%;
+  gap: 2rem;
+}
+
+span {
+  font-family: var(--ff-fraunces);
+  font-size: var(--fraunces-fs-h1);
+  color: var(--clr-pale-orange);
+}
+
+.howCard h3 {
+  font-family: var(--ff-fraunces);
+  font-size: var(--fraunces-fs-h3);
+  line-height: var(--fraunces-line-height-400);
+  color: var(--clr-dark-blue);
+}
+
+.howCard p {
+  font-family: var(--ff-barlow);
+  font-size: 1rem;
+  text-align: left;
+  line-height: var(--barlow-line-height);
+}
+
+.howCard::before {
+  position: absolute;
+  content: "";
+  width: var(--decoration-width);
+  aspect-ratio: 1;
+  top: var(--decoration-position);
+  border: 2px solid var(--clr-dark-cyan);
+  border-radius: 50%;
+}
+
+.howCard:not(:last-of-type)::after {
+  position: absolute;
+  content: "";
+  width: calc(
+    100% + var(--gap) / 2 +
+      calc(var(--decoration-width) / 2 - var(--decoration-width) / 4)
+  );
+  top: calc(var(--decoration-position) + var(--decoration-width) / 2);
+  left: var(--decoration-width);
+  border: 1px solid var(--clr-pale-orange);
+}
+
+@media (max-width: 1140px) {
+  .how {
+    width: 100%;
+  }
+}
+
+@media (max-width: 980px) {
+  .how {
+    display: grid;
+  }
+  .how h4 {
+    margin-top: 4rem;
+    text-align: center;
+  }
+
+  .howCard::before,
+  .howCard::after {
+    display: none;
+  }
+
+  .cardsContainer {
+    flex-direction: column;
+    align-items: center;
+    padding-block: 2rem;
+  }
+
+  .howCard {
+    width: unset;
+    align-items: center;
+  }
+
+  .howCard p {
+    text-align: center;
+  }
+
+  .howCard h3 {
+    text-align: center;
+  }
+
+  .howPlan {
+    padding: 0;
+  }
+
+  .howPlan .howCard {
+    width: 45%;
+  }
+}

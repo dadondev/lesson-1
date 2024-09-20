@@ -1,0 +1,21 @@
+.ctaButton {
+  cursor: pointer;
+  place-self: end;
+  border: none;
+  background-color: var(--clr-dark-cyan);
+  font-family: var(--ff-fraunces);
+  color: var(--clr-light-cream);
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.ctaButton:disabled {
+  cursor: not-allowed;
+  background-color: var(--clr-disabled);
+}
+
+@media (max-width: 1140px) {
+  .ctaButton {
+    place-self: center;
+  }
+}
